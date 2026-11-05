@@ -31,11 +31,11 @@
     "label": "Senaste testkörning rapporterad",
     "detail": "Visar senast sparade pappersresultat, inte livehandel."
   },
-  "generated_utc": "2026-11-05T15:18:42.794275+00:00",
+  "generated_utc": "2026-11-05T15:29:30.622712+00:00",
   "mode": "PAPER_ONLY",
   "performance": {
-    "equity_sek": 498.08,
-    "profit_sek": -1.92,
+    "equity_sek": 497.84,
+    "profit_sek": -2.16,
     "trade_stats": {
       "closed_trades": 0,
       "winning_trades": 0,
@@ -43,14 +43,14 @@
       "realized_profit_before_costs_sek": 0
     },
     "cost_scenario": {
-      "estimated_equity_after_costs_sek": 495.93,
-      "estimated_profit_after_costs_sek": -4.07,
+      "estimated_equity_after_costs_sek": 495.69,
+      "estimated_profit_after_costs_sek": -4.31,
       "estimated_costs_sek": 2.15,
       "assumptions": "Illustrative: commission max(1 SEK, 0.25% of order) + 0.10% half-spread each side; includes hypothetical exit of open holding. No market impact or taxes."
     }
   },
   "research": {
-    "generated_utc": "2026-11-05T15:18:42.393298+00:00",
+    "generated_utc": "2026-11-05T15:29:30.300782+00:00",
     "mode": "advisory_only",
     "candidates": [
       {
