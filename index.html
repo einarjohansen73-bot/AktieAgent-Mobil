@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="sv"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AktieAgent</title>
+<style>body{font:17px system-ui;background:#101827;color:white;margin:0;padding:22px}main{max-width:480px;margin:auto}section{background:#1e3046;padding:20px;border-radius:18px;margin:14px 0}h1{font-size:26px}.big{font-size:38px;font-weight:bold}small{color:#b8c8d8}button{padding:13px;background:#315a82;color:white;border:0;border-radius:12px;width:100%}</style>
+<main><h1>📈 AktieAgent</h1><small>Automatisk pappershandel · inga riktiga pengar</small>
+<section><small>Portföljvärde</small><div class="big" id="equity">—</div></section>
+<section><small>Vinst/förlust</small><h2 id="profit">—</h2><small>Kontanter</small><h2 id="cash">—</h2></section>
+<section><small>Senaste beslut</small><h2 id="action">—</h2><p id="reason"></p><p id="position"></p><small id="session"></small></section>
+<section><h2>Senaste affärer</h2><div id="history">—</div></section>
+<button onclick="refresh()">Uppdatera</button><p id="status"></p>
+<small>Testkonto 500 kr. Inofficiella, fördröjda kurser. Inga avgifter eller spread i resultatet. Ingen koppling till Nordnet.</small>
+</main>
+<script>
+function set(id,s){document.getElementById(id).textContent=s}
+function kr(n){return typeof n==='number'?n.toLocaleString('sv-SE',{style:'currency',currency:'SEK'}):'Okänt'}
+async function refresh(){
+try{
+const response=await fetch('dashboard.json?v='+Date.now(),{cache:'no-store'});
+if(!response.ok)throw Error('Rapportfil saknas');
+const d=await response.json(),s=d.state,p=d.performance,h=s.history||[],last=h[h.length-1]||{};
+set('equity',kr(p.equity_sek));set('profit',kr(p.profit_sek));set('cash',kr(s.cash));
+set('action',({BUY:'KÖP',SELL:'SÄLJ',HOLD:'BEHÅLL',WAIT:'AVVAKTA'})[last.action]||'INGET BESLUT');
+set('reason',last.reason||'Ingen signal');set('position',s.position?s.position.shares+' st '+s.position.symbol:'Inga aktier');
+set('session','Senaste börsdag: '+(s.last_session||'Ingen'));
+set('history',h.slice(-8).reverse().map(x=>x.session+' · '+x.action+' · '+(x.symbol||'Ingen aktie')).join(' | ')||'Inga affärer ännu');
+set('status',p.equity_sek===null?'Värdet kan inte beräknas säkert':'');
+}catch(e){set('status','Rapporten kunde inte läsas: '+e.message)}
+}refresh();
+</script>
