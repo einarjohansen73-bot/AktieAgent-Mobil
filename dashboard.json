@@ -1,0 +1,12 @@
+{
+  "state": {
+    "cash": 500,
+    "position": null,
+    "last_session": null,
+    "history": []
+  },
+  "performance": {
+    "equity_sek": 500,
+    "profit_sek": 0
+  }
+}
