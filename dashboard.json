@@ -1,12 +1,33 @@
 {
   "state": {
-    "cash": 500,
-    "position": null,
-    "last_session": null,
-    "history": []
+    "cash": 422.18,
+    "position": {
+      "symbol": "BHG.ST",
+      "shares": 3,
+      "entry": 25.94
+    },
+    "last_session": "2026-11-05",
+    "history": [
+      {
+        "session": "2026-11-03",
+        "action": "WAIT",
+        "symbol": null,
+        "shares": 0,
+        "price": null,
+        "reason": "No valid signal"
+      },
+      {
+        "session": "2026-11-05",
+        "action": "BUY",
+        "symbol": "BHG.ST",
+        "shares": 3,
+        "price": 25.94,
+        "reason": "Simple +3% close-to-close signal"
+      }
+    ]
   },
   "performance": {
-    "equity_sek": 500,
-    "profit_sek": 0
+    "equity_sek": 500.0,
+    "profit_sek": 0.0
   }
 }
