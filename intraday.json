@@ -1,13 +1,9 @@
 {
   "mode": "PAPER_ONLY",
-  "cash_sek": 416.3,
-  "position": {
-    "symbol": "SIVE.ST",
-    "shares": 5,
-    "entry": 16.74
-  },
+  "cash_sek": 494.05,
+  "position": null,
   "last_session": "2026-11-05",
-  "trades_today": 1,
+  "trades_today": 2,
   "history": [
     {
       "session": "2026-11-05",
@@ -16,17 +12,25 @@
       "shares": 5,
       "price": 16.74,
       "reason": "Two fresh rising observations, paper-only"
+    },
+    {
+      "session": "2026-11-05",
+      "action": "SELL",
+      "symbol": "SIVE.ST",
+      "shares": 5,
+      "price": 15.55,
+      "reason": "Paper exit threshold -5% / +10%"
     }
   ],
-  "equity_sek": 498.05,
-  "profit_sek": -1.95,
-  "valuation_quote_utc": "2026-11-05T14:39:10+00:00",
-  "valuation_note": "Indikativt värde från inofficiell kurs, före courtage och spread. Inte realtid eller möjligt avslutspris.",
+  "equity_sek": 494.05,
+  "profit_sek": -5.95,
+  "valuation_quote_utc": null,
+  "valuation_note": "Endast kontanter, före kostnader.",
   "learning": {
-    "closed_trades": 0,
+    "closed_trades": 1,
     "wins": 0,
-    "losses": 0,
-    "win_rate_percent": null,
-    "gross_realized_pnl_sek": 0
+    "losses": 1,
+    "win_rate_percent": 0.0,
+    "gross_realized_pnl_sek": -5.95
   }
 }
