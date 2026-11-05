@@ -7,6 +7,7 @@
 <section><small>Vinst/förlust</small><h2 id="profit">—</h2><small>Kontanter</small><h2 id="cash">—</h2></section>
 <section><small>Senaste beslut</small><h2 id="action">—</h2><p id="reason"></p><p id="position"></p><small id="session"></small></section>
 <section><h2>Fyra analysdelar</h2><div id="research">Väntar på första sammanställda analysen</div><small>Teknisk observation, inte köpråd. Nyheter och forum visar antal träffar, inte positivt eller negativt sentiment.</small></section>
+<section><h2>Uppskattade handelskostnader</h2><div id="costs">Väntar på ny beräkning</div><small>Illustrativt exempel: minst 1 kr i courtage per order, alternativt 0,25 %, plus 0,10 % antagen halv spread per sida. Inkluderar tänkt försäljning av öppet innehav. Inte Nordnets prislista.</small></section>
 <section><h2>Träffsäkerhet</h2><div id="stats">Väntar på avslutade testaffärer</div><small>Endast avslutade affärer. Beräknat före avgifter och spread.</small></section>
 <section><h2>Senaste affärer</h2><div id="history">—</div></section>
 <button onclick="refresh()">Uppdatera</button><p id="status"></p>
@@ -26,6 +27,8 @@ set('reason',last.reason||'Ingen signal');set('position',s.position?s.position.s
 set('session','Senaste börsdag: '+(s.last_session||'Ingen'));
 const research=(d.research&&d.research.candidates)||[];
 set('research',research.length?research.map(x=>x.symbol+' · Trend: '+(x.trend||'SAKNAS')+' · Volym: '+(x.volume||'SAKNAS')+' · Nyheter: '+(x.news_headlines??'okänt')+' · Forum: '+(x.forum_posts??'okänt')+' · '+(x.assessment||'AVVAKTA')).join(' | '):'Ingen sammanställd analys ännu');
+const costs=p.cost_scenario;
+set('costs',costs&&typeof costs.estimated_equity_after_costs_sek==='number'?'Efter antagna kostnader: '+kr(costs.estimated_equity_after_costs_sek)+' · Antagna kostnader: '+kr(costs.estimated_costs_sek):'Väntar på ny beräkning');
 const stats=p.trade_stats;
 set('stats',stats?(stats.closed_trades+' avslutade affärer · '+stats.winning_trades+' vinster · '+(stats.win_rate_percent===null?'Ingen träffsäkerhet ännu':stats.win_rate_percent+' % träffsäkerhet')+' · Realiserat: '+kr(stats.realized_profit_before_costs_sek)):'Väntar på nästa rapport');
 set('history',h.slice(-8).reverse().map(x=>x.session+' · '+x.action+' · '+(x.symbol||'Ingen aktie')).join(' | ')||'Inga affärer ännu');
