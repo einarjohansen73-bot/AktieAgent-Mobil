@@ -15,8 +15,11 @@
       "symbol": "SIVE.ST",
       "shares": 5,
       "price": 16.74,
-      "quote_timestamp_utc": "2026-11-05T13:43:26+00:00",
       "reason": "Two fresh rising observations, paper-only"
     }
-  ]
+  ],
+  "equity_sek": 499.7,
+  "profit_sek": -0.3,
+  "valuation_quote_utc": "2026-11-05T13:59:34+00:00",
+  "valuation_note": "Indikativt värde från inofficiell kurs, före courtage och spread. Inte realtid eller möjligt avslutspris."
 }
