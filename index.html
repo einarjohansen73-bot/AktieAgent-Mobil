@@ -34,5 +34,7 @@ set('stats',stats?(stats.closed_trades+' avslutade affärer · '+stats.winning_t
 set('history',h.slice(-8).reverse().map(x=>x.session+' · '+x.action+' · '+(x.symbol||'Ingen aktie')).join(' | ')||'Inga affärer ännu');
 set('status',(p.equity_sek===null?'Värdet kan inte beräknas säkert. ':'')+'Senast registrerad börsdag: '+(s.last_session||'okänd')+'. Detta är en fördröjd simulering, inte realtid.');
 }catch(e){set('status','Rapporten kunde inte läsas: '+e.message)}
-}refresh();
+}
+async function refreshIntraday(){try{const response=await fetch("intraday.json?v="+Date.now(),{cache:"no-store"});if(!response.ok)throw Error("missing");const d=await response.json();if(d.mode!=="PAPER_ONLY")throw Error("invalid");const pos=d.position;set("intraday","Testkontanter: "+kr(d.cash_sek)+" · Innehav: "+(pos?pos.shares+" st "+pos.symbol:"inga")+" · Senaste börsdag: "+(d.last_session||"okänd")+". Separat testkonto, inte live.");}catch(e){set("intraday","Ingen publicerad intradagsrapport ännu. Inga riktiga affärer.");}}
+refresh();refreshIntraday();
 </script>
