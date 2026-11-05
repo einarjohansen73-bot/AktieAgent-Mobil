@@ -27,11 +27,23 @@
     ]
   },
   "performance": {
-    "equity_sek": 499.94,
-    "profit_sek": -0.06
+    "equity_sek": 499.7,
+    "profit_sek": -0.3,
+    "trade_stats": {
+      "closed_trades": 0,
+      "winning_trades": 0,
+      "win_rate_percent": null,
+      "realized_profit_before_costs_sek": 0
+    },
+    "cost_scenario": {
+      "estimated_equity_after_costs_sek": 497.54,
+      "estimated_profit_after_costs_sek": -2.46,
+      "estimated_costs_sek": 2.16,
+      "assumptions": "Illustrative: commission max(1 SEK, 0.25% of order) + 0.10% half-spread each side; includes hypothetical exit of open holding. No market impact or taxes."
+    }
   },
   "research": {
-    "generated_utc": "2026-11-05T12:20:40.437083+00:00",
+    "generated_utc": "2026-11-05T13:08:24.007484+00:00",
     "mode": "advisory_only",
     "candidates": [
       {
