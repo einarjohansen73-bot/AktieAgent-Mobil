@@ -27,7 +27,21 @@
     ]
   },
   "performance": {
-    "equity_sek": 499.94,
-    "profit_sek": -0.06
+    "equity_sek": 500.0,
+    "profit_sek": 0.0
+  },
+  "research": {
+    "generated_utc": "2026-11-05T12:11:04.234121+00:00",
+    "mode": "advisory_only",
+    "candidates": [
+      {
+        "symbol": "BHG.ST",
+        "trend": "POSITIV",
+        "volume": "NORMAL_LAG",
+        "news_headlines": 2,
+        "forum_posts": 0,
+        "assessment": "AVVAKTA"
+      }
+    ]
   }
 }
