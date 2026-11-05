@@ -23,7 +23,7 @@ set('action',({BUY:'KÖP',SELL:'SÄLJ',HOLD:'BEHÅLL',WAIT:'AVVAKTA'})[last.acti
 set('reason',last.reason||'Ingen signal');set('position',s.position?s.position.shares+' st '+s.position.symbol:'Inga aktier');
 set('session','Senaste börsdag: '+(s.last_session||'Ingen'));
 set('history',h.slice(-8).reverse().map(x=>x.session+' · '+x.action+' · '+(x.symbol||'Ingen aktie')).join(' | ')||'Inga affärer ännu');
-set('status',p.equity_sek===null?'Värdet kan inte beräknas säkert':'');
+set('status',(p.equity_sek===null?'Värdet kan inte beräknas säkert. ':'')+'Senast registrerad börsdag: '+(s.last_session||'okänd')+'. Detta är en fördröjd simulering, inte realtid.');
 }catch(e){set('status','Rapporten kunde inte läsas: '+e.message)}
 }refresh();
 </script>
