@@ -39,9 +39,9 @@ set('trade',lastTrade?lastTrade.shares+' st '+lastTrade.symbol:'Väntar på för
 set('session','Senaste rapporterade börsdag: '+(s.last_session||'okänd'));
 const today=new Date(),session=s.last_session;
 const age=session?Math.floor((Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate())-Date.parse(session+'T00:00:00Z'))/86400000):999;
-if(p.equity_sek==null){set('status','VARNING');set('statusdetail','Portföljvärdet kan inte beräknas säkert.');}
+if(d.status?.code==='STOPPED'||p.equity_sek==null){set('status','VARNING');set('statusdetail',d.status?.detail||'Portföljvärdet kan inte beräknas säkert.');}
 else if(!Number.isFinite(age)||age<0||age>4){set('status','GAMMAL RAPPORT');set('statusdetail','Ingen aktuell börsdagsrapport. Kontrollera GitHub-körningarna.');}
-else{set('status','SENASTE RAPPORT OK');set('statusdetail','Automatisk pappershandel. Ingen garanti att nästa körning lyckas.');}
+else{set('status',d.status?.label||'SENASTE RAPPORT OK');set('statusdetail',(d.status?.detail||'Automatisk pappershandel. Ingen garanti att nästa körning lyckas.')+(d.generated_utc?' Rapport skapad: '+new Date(d.generated_utc).toLocaleString('sv-SE')+'.':''));}
 }catch(e){set('status','RAPPORTFEL');set('statusdetail','Kunde inte läsa senaste resultatet: '+e.message);}
 }
 refresh();
