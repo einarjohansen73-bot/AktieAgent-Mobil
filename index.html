@@ -1,40 +1,48 @@
 <!doctype html>
-<html lang="sv"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="sv">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AktieAgent</title>
-<style>body{font:17px system-ui;background:#101827;color:white;margin:0;padding:22px}main{max-width:480px;margin:auto}section{background:#1e3046;padding:20px;border-radius:18px;margin:14px 0}h1{font-size:26px}.big{font-size:38px;font-weight:bold}small{color:#b8c8d8}button{padding:13px;background:#315a82;color:white;border:0;border-radius:12px;width:100%}</style>
-<main><h1>📈 AktieAgent</h1><small>Automatisk pappershandel · inga riktiga pengar</small>
-<section><small>Portföljvärde</small><div class="big" id="equity">—</div></section>
-<section><small>Vinst/förlust</small><h2 id="profit">—</h2><small>Kontanter</small><h2 id="cash">—</h2></section>
-<section><small>Senaste beslut</small><h2 id="action">—</h2><p id="reason"></p><p id="position"></p><small id="session"></small></section>
-<section><h2>Intradagstest (separat)</h2><div id="intraday">Väntar på rapport</div></section><section><h2>Intradagens lärandeminne</h2><div id="learning">Väntar på avslutade testaffärer.</div><small>Statistik före avgifter. Agenten ändrar inte handelsreglerna själv.</small></section><section><h2>Fyra analysdelar</h2><div id="research">Väntar på första sammanställda analysen</div><small>Teknisk observation, inte köpråd. Nyheter och forum visar antal träffar, inte positivt eller negativt sentiment.</small></section>
-<section><h2>Uppskattade handelskostnader</h2><div id="costs">Väntar på ny beräkning</div><small>Illustrativt exempel: minst 1 kr i courtage per order, alternativt 0,25 %, plus 0,10 % antagen halv spread per sida. Inkluderar tänkt försäljning av öppet innehav. Inte Nordnets prislista.</small></section>
-<section><h2>Träffsäkerhet</h2><div id="stats">Väntar på avslutade testaffärer</div><small>Endast avslutade affärer. Beräknat före avgifter och spread.</small></section>
-<section><h2>Senaste affärer</h2><div id="history">—</div></section>
-<button onclick="refresh()">Uppdatera</button><p id="status"></p>
-<small>Testkonto 500 kr. Inofficiella, fördröjda kurser. Inga avgifter eller spread i resultatet. Ingen koppling till Nordnet.</small>
+<style>
+body{font:17px system-ui,sans-serif;background:#101827;color:#fff;margin:0;padding:24px 18px}
+main{max-width:480px;margin:auto}h1{font-size:28px;margin:10px 0 4px}
+small,.muted{color:#b8c8d8}section{background:#1e3046;padding:22px;border-radius:18px;margin:16px 0}
+.label{color:#b8c8d8;font-size:15px}.big{font-size:42px;font-weight:750;margin:10px 0}
+.value{font-size:27px;font-weight:700;margin:9px 0}.detail{line-height:1.5}
+button{padding:14px;background:#315a82;color:#fff;border:0;border-radius:12px;width:100%;font-size:16px}
+footer{font-size:13px;color:#b8c8d8;line-height:1.5;margin:18px 0}
+</style></head>
+<body><main>
+<h1>📈 AktieAgent</h1><small>Automatisk pappershandel · inga riktiga pengar</small>
+<section><div class="label">Portföljvärde</div><div class="big" id="equity">—</div></section>
+<section><div class="label">Vinst / förlust</div><div class="value" id="profit">—</div><div class="muted" id="percent">—</div></section>
+<section><div class="label">Senaste affär</div><div class="value" id="action">—</div><div class="detail" id="trade">—</div><small id="session"></small></section>
+<section><div class="label">Systemstatus</div><div class="value" id="status">Läser rapport…</div><div class="muted" id="statusdetail"></div></section>
+<button onclick="refresh()">Uppdatera</button>
+<footer>Startkapital 500 kr. Endast fördröjd simulering med inofficiella kurser. Redovisat resultat är före courtage och spread. Ingen koppling till Nordnet. Systemstatus visar rapportens tillstånd, inte realtidsövervakning.</footer>
 </main>
 <script>
-function set(id,s){document.getElementById(id).textContent=s}
-function kr(n){return typeof n==='number'?n.toLocaleString('sv-SE',{style:'currency',currency:'SEK'}):'Okänt'}
+const set=(id,value)=>document.getElementById(id).textContent=value;
+const kr=n=>typeof n==='number'&&Number.isFinite(n)?n.toLocaleString('sv-SE',{style:'currency',currency:'SEK'}):'Okänt';
 async function refresh(){
 try{
 const response=await fetch('dashboard.json?v='+Date.now(),{cache:'no-store'});
-if(!response.ok)throw Error('Rapportfil saknas');
-const d=await response.json(),s=d.state,p=d.performance,h=s.history||[],last=h[h.length-1]||{};
-set('equity',kr(p.equity_sek));set('profit',kr(p.profit_sek));set('cash',kr(s.cash));
-set('action',({BUY:'KÖP',SELL:'SÄLJ',HOLD:'BEHÅLL',WAIT:'AVVAKTA'})[last.action]||'INGET BESLUT');
-set('reason',last.reason||'Ingen signal');set('position',s.position?s.position.shares+' st '+s.position.symbol:'Inga aktier');
-set('session','Senaste börsdag: '+(s.last_session||'Ingen'));
-const research=(d.research&&d.research.candidates)||[];
-set('research',research.length?research.map(x=>x.symbol+' · Trend: '+(x.trend||'SAKNAS')+' · Volym: '+(x.volume||'SAKNAS')+' · Nyheter: '+(x.news_headlines??'okänt')+' · Forum: '+(x.forum_posts??'okänt')+' · '+(x.assessment||'AVVAKTA')).join(' | '):'Ingen sammanställd analys ännu');
-const costs=p.cost_scenario;
-set('costs',costs&&typeof costs.estimated_equity_after_costs_sek==='number'?'Efter antagna kostnader: '+kr(costs.estimated_equity_after_costs_sek)+' · Antagna kostnader: '+kr(costs.estimated_costs_sek):'Väntar på ny beräkning');
-const stats=p.trade_stats;
-set('stats',stats?(stats.closed_trades+' avslutade affärer · '+stats.winning_trades+' vinster · '+(stats.win_rate_percent===null?'Ingen träffsäkerhet ännu':stats.win_rate_percent+' % träffsäkerhet')+' · Realiserat: '+kr(stats.realized_profit_before_costs_sek)):'Väntar på nästa rapport');
-set('history',h.slice(-8).reverse().map(x=>x.session+' · '+x.action+' · '+(x.symbol||'Ingen aktie')).join(' | ')||'Inga affärer ännu');
-set('status',(p.equity_sek===null?'Värdet kan inte beräknas säkert. ':'')+'Senast registrerad börsdag: '+(s.last_session||'okänd')+'. Detta är en fördröjd simulering, inte realtid.');
-}catch(e){set('status','Rapporten kunde inte läsas: '+e.message)}
+if(!response.ok)throw Error('rapporten saknas');
+const d=await response.json(),s=d.state,p=d.performance;
+if(!s||!p)throw Error('ofullständig rapport');
+const history=s.history||[];
+const lastTrade=[...history].reverse().find(x=>x.action==='BUY'||x.action==='SELL');
+set('equity',kr(p.equity_sek));
+set('profit',kr(p.profit_sek));
+set('percent',typeof p.profit_sek==='number'?(100*p.profit_sek/500).toLocaleString('sv-SE',{maximumFractionDigits:2})+' % sedan start':'Procent kan inte beräknas');
+set('action',lastTrade?(lastTrade.action==='BUY'?'KÖP':'SÄLJ'):'INGEN AFFÄR');
+set('trade',lastTrade?lastTrade.shares+' st '+lastTrade.symbol:'Väntar på första testaffären');
+set('session','Senaste rapporterade börsdag: '+(s.last_session||'okänd'));
+const today=new Date(),session=s.last_session;
+const age=session?Math.floor((Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate())-Date.parse(session+'T00:00:00Z'))/86400000):999;
+if(p.equity_sek==null){set('status','VARNING');set('statusdetail','Portföljvärdet kan inte beräknas säkert.');}
+else if(!Number.isFinite(age)||age<0||age>4){set('status','GAMMAL RAPPORT');set('statusdetail','Ingen aktuell börsdagsrapport. Kontrollera GitHub-körningarna.');}
+else{set('status','SENASTE RAPPORT OK');set('statusdetail','Automatisk pappershandel. Ingen garanti att nästa körning lyckas.');}
+}catch(e){set('status','RAPPORTFEL');set('statusdetail','Kunde inte läsa senaste resultatet: '+e.message);}
 }
-async function refreshIntraday(){try{const response=await fetch("intraday.json?v="+Date.now(),{cache:"no-store"});if(!response.ok)throw Error("missing");const d=await response.json();if(d.mode!=="PAPER_ONLY")throw Error("invalid");set("intraday", "Testportfölj: "+(typeof d.equity_sek==="number"?kr(d.equity_sek):"saknar aktuell kurs")+" · Resultat: "+(typeof d.profit_sek==="number"?kr(d.profit_sek):"ej beräknat")+" · "+(d.valuation_note||"Ingen aktuell värdering"));const l=d.learning;set("learning",l?(l.closed_trades+" avslutade affärer · "+l.wins+" vinster · "+l.losses+" förluster · Träffsäkerhet: "+(l.win_rate_percent===null?"för få affärer":l.win_rate_percent+" %")+" · Realiserat före kostnader: "+kr(l.gross_realized_pnl_sek)):"Väntar på nästa rapport.");const pos=d.position;const trades=(d.history||[]).filter(x=>x.action==="BUY"||x.action==="SELL");const last=trades[trades.length-1];set("intraday",document.getElementById("intraday").textContent+" · Testkontanter: "+kr(d.cash_sek)+" · Innehav: "+(pos?pos.shares+" st "+pos.symbol+" (inköpskurs "+kr(pos.entry)+")":"inga")+" · Testaffärer: "+trades.length+" · Senaste affär: "+(last?last.action+" "+last.shares+" st "+last.symbol+" à "+kr(last.price):"ingen")+" · Börsdag: "+(d.last_session||"okänd")+". Separat testkonto, inte live. Kontanter är inte totalt portföljvärde.");}catch(e){set("intraday","Ingen publicerad intradagsrapport ännu. Inga riktiga affärer.");}}
-refresh();refreshIntraday();
-</script>
+refresh();
+</script></body></html>
