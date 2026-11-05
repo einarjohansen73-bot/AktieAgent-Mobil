@@ -6,6 +6,7 @@
 <section><small>Portföljvärde</small><div class="big" id="equity">—</div></section>
 <section><small>Vinst/förlust</small><h2 id="profit">—</h2><small>Kontanter</small><h2 id="cash">—</h2></section>
 <section><small>Senaste beslut</small><h2 id="action">—</h2><p id="reason"></p><p id="position"></p><small id="session"></small></section>
+<section><h2>Fyra analysdelar</h2><div id="research">Väntar på första sammanställda analysen</div><small>Teknisk observation, inte köpråd. Nyheter och forum visar antal träffar, inte positivt eller negativt sentiment.</small></section>
 <section><h2>Senaste affärer</h2><div id="history">—</div></section>
 <button onclick="refresh()">Uppdatera</button><p id="status"></p>
 <small>Testkonto 500 kr. Inofficiella, fördröjda kurser. Inga avgifter eller spread i resultatet. Ingen koppling till Nordnet.</small>
@@ -22,6 +23,8 @@ set('equity',kr(p.equity_sek));set('profit',kr(p.profit_sek));set('cash',kr(s.ca
 set('action',({BUY:'KÖP',SELL:'SÄLJ',HOLD:'BEHÅLL',WAIT:'AVVAKTA'})[last.action]||'INGET BESLUT');
 set('reason',last.reason||'Ingen signal');set('position',s.position?s.position.shares+' st '+s.position.symbol:'Inga aktier');
 set('session','Senaste börsdag: '+(s.last_session||'Ingen'));
+const research=(d.research&&d.research.candidates)||[];
+set('research',research.length?research.map(x=>x.symbol+' · Trend: '+(x.trend||'SAKNAS')+' · Volym: '+(x.volume||'SAKNAS')+' · Nyheter: '+(x.news_headlines??'okänt')+' · Forum: '+(x.forum_posts??'okänt')+' · '+(x.assessment||'AVVAKTA')).join(' | '):'Ingen sammanställd analys ännu');
 set('history',h.slice(-8).reverse().map(x=>x.session+' · '+x.action+' · '+(x.symbol||'Ingen aktie')).join(' | ')||'Inga affärer ännu');
 set('status',(p.equity_sek===null?'Värdet kan inte beräknas säkert. ':'')+'Senast registrerad börsdag: '+(s.last_session||'okänd')+'. Detta är en fördröjd simulering, inte realtid.');
 }catch(e){set('status','Rapporten kunde inte läsas: '+e.message)}
