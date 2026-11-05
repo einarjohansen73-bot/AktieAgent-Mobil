@@ -27,8 +27,8 @@
     ]
   },
   "performance": {
-    "equity_sek": 499.82,
-    "profit_sek": -0.18,
+    "equity_sek": 498.8,
+    "profit_sek": -1.2,
     "trade_stats": {
       "closed_trades": 0,
       "winning_trades": 0,
@@ -36,22 +36,38 @@
       "realized_profit_before_costs_sek": 0
     },
     "cost_scenario": {
-      "estimated_equity_after_costs_sek": 497.66,
-      "estimated_profit_after_costs_sek": -2.34,
-      "estimated_costs_sek": 2.16,
+      "estimated_equity_after_costs_sek": 496.65,
+      "estimated_profit_after_costs_sek": -3.35,
+      "estimated_costs_sek": 2.15,
       "assumptions": "Illustrative: commission max(1 SEK, 0.25% of order) + 0.10% half-spread each side; includes hypothetical exit of open holding. No market impact or taxes."
     }
   },
   "research": {
-    "generated_utc": "2026-11-05T13:41:34.563032+00:00",
+    "generated_utc": "2026-11-05T14:44:25.602265+00:00",
     "mode": "advisory_only",
     "candidates": [
       {
         "symbol": "BHG.ST",
-        "trend": "POSITIV",
-        "volume": "NORMAL_LAG",
-        "news_headlines": 2,
-        "forum_posts": 0,
+        "trend": "SAKNAS",
+        "volume": "SAKNAS",
+        "news_headlines": null,
+        "forum_posts": null,
+        "assessment": "AVVAKTA"
+      },
+      {
+        "symbol": "TRUE-B.ST",
+        "trend": "SAKNAS",
+        "volume": "SAKNAS",
+        "news_headlines": null,
+        "forum_posts": null,
+        "assessment": "AVVAKTA"
+      },
+      {
+        "symbol": "SIVE.ST",
+        "trend": "SAKNAS",
+        "volume": "SAKNAS",
+        "news_headlines": null,
+        "forum_posts": null,
         "assessment": "AVVAKTA"
       }
     ]
