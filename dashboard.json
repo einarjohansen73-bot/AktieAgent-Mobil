@@ -31,7 +31,7 @@
     "label": "Senaste testkörning rapporterad",
     "detail": "Visar senast sparade pappersresultat, inte livehandel."
   },
-  "generated_utc": "2026-11-06T07:03:41.073657+00:00",
+  "generated_utc": "2026-11-06T07:10:26.366528+00:00",
   "mode": "PAPER_ONLY",
   "performance": {
     "equity_sek": 496.76,
@@ -50,7 +50,7 @@
     }
   },
   "research": {
-    "generated_utc": "2026-11-06T07:03:40.754545+00:00",
+    "generated_utc": "2026-11-06T07:10:26.104602+00:00",
     "mode": "advisory_only",
     "candidates": [
       {
