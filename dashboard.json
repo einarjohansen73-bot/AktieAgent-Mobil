@@ -31,11 +31,11 @@
     "label": "Senaste testkörning rapporterad",
     "detail": "Visar senast sparade pappersresultat, inte livehandel."
   },
-  "generated_utc": "2026-11-05T17:57:30.450469+00:00",
+  "generated_utc": "2026-11-06T06:48:20.212687+00:00",
   "mode": "PAPER_ONLY",
   "performance": {
-    "equity_sek": 497.84,
-    "profit_sek": -2.16,
+    "equity_sek": 496.76,
+    "profit_sek": -3.24,
     "trade_stats": {
       "closed_trades": 0,
       "winning_trades": 0,
@@ -43,29 +43,29 @@
       "realized_profit_before_costs_sek": 0
     },
     "cost_scenario": {
-      "estimated_equity_after_costs_sek": 495.69,
-      "estimated_profit_after_costs_sek": -4.31,
+      "estimated_equity_after_costs_sek": 494.61,
+      "estimated_profit_after_costs_sek": -5.39,
       "estimated_costs_sek": 2.15,
       "assumptions": "Illustrative: commission max(1 SEK, 0.25% of order) + 0.10% half-spread each side; includes hypothetical exit of open holding. No market impact or taxes."
     }
   },
   "research": {
-    "generated_utc": "2026-11-05T17:57:30.062873+00:00",
+    "generated_utc": "2026-11-06T06:48:19.881694+00:00",
     "mode": "advisory_only",
     "candidates": [
+      {
+        "symbol": "TRUE-B.ST",
+        "trend": "BLANDAD",
+        "volume": "HOG",
+        "news_headlines": 5,
+        "forum_posts": 5,
+        "assessment": "AVVAKTA"
+      },
       {
         "symbol": "BHG.ST",
         "trend": "POSITIV",
         "volume": "NORMAL_LAG",
-        "news_headlines": 2,
-        "forum_posts": 0,
-        "assessment": "AVVAKTA"
-      },
-      {
-        "symbol": "TRUE-B.ST",
-        "trend": "BLANDAD",
-        "volume": "NORMAL_LAG",
-        "news_headlines": 5,
+        "news_headlines": 1,
         "forum_posts": null,
         "assessment": "AVVAKTA"
       },
