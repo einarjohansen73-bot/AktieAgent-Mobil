@@ -34,9 +34,9 @@
       "reason": "Two fresh rising observations, paper-only"
     }
   ],
-  "equity_sek": 494.05,
-  "profit_sek": -5.95,
-  "valuation_quote_utc": "2026-11-06T09:02:18+00:00",
+  "equity_sek": 493.89,
+  "profit_sek": -6.11,
+  "valuation_quote_utc": "2026-11-06T10:08:10+00:00",
   "valuation_note": "Indikativt värde från inofficiell kurs, före courtage och spread. Inte realtid eller möjligt avslutspris.",
   "learning": {
     "closed_trades": 1,
