@@ -16,6 +16,7 @@ footer{font-size:13px;color:#b8c8d8;line-height:1.5;margin:18px 0}
 <section><div class="label">Portföljvärde</div><div class="big" id="equity">—</div></section>
 <section><div class="label">Vinst / förlust</div><div class="value" id="profit">—</div><div class="muted" id="percent">—</div></section>
 <section><div class="label">Senaste affär</div><div class="value" id="action">—</div><div class="detail" id="trade">—</div><small id="session"></small></section>
+<section><div class="label">Strategijämförelse · 500 kr per agent</div><div class="detail" id="compareA">Agent A: väntar på rapport</div><div class="detail" id="compareB">Agent B: väntar på första börsdagen</div><small>Agent A visas före kostnader; Agent B efter uppskattade kostnader. Ingen rättvis vinnare kan utses ännu.</small></section>
 <section><div class="label">Agenternas prognoser</div><div class="value" id="forecasts">—</div><div class="detail" id="accuracy">—</div><small>Riktning efter två senare observerade börsdagar. Äldre prognosmetoder räknas inte in i träffsäkerheten.</small></section>
 <section><div class="label">Systemstatus</div><div class="value" id="status">Läser rapport…</div><div class="muted" id="statusdetail"></div></section>
 <button onclick="refresh()">Uppdatera</button>
@@ -32,6 +33,9 @@ const d=await response.json(),s=d.state,p=d.performance;
 if(!s||!p)throw Error('ofullständig rapport');
 const history=s.history||[];
 const lastTrade=[...history].reverse().find(x=>x.action==='BUY'||x.action==='SELL');
+const b=d.chart_agent;
+set('compareA','Agent A · fyra signaler: '+kr(p.equity_sek)+' före kostnader');
+set('compareB',b?(b.last_session?'Agent B · endast diagram: '+kr(b.equity_after_costs_sek)+' efter uppskattade kostnader · '+b.trades+' affärer':'Agent B · endast diagram: 500 kr · väntar på första börsdagen'):'Agent B · väntar på publicerad rapport');
 const f=d.forecasts||{};
 set('forecasts',typeof f.total==='number'?f.total+' registrerade · '+(f.evaluated??0)+' utvärderade':'Prognosstatistik väntar på nästa körning');
 set('accuracy',typeof f.accuracy_percent==='number'?'Träffsäkerhet: '+f.accuracy_percent.toLocaleString('sv-SE')+' %':'Träffsäkerhet: ännu för få utvärderade prognoser');
