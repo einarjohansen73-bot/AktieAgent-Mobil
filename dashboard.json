@@ -35,7 +35,7 @@
     "label": "Senaste testkörning rapporterad",
     "detail": "Visar senast sparade pappersresultat, inte livehandel."
   },
-  "generated_utc": "2026-11-06T17:52:56.528593+00:00",
+  "generated_utc": "2026-11-07T11:03:42.925986+00:00",
   "mode": "PAPER_ONLY",
   "performance": {
     "equity_sek": 495.98,
@@ -67,7 +67,7 @@
     "accuracy_percent": null
   },
   "research": {
-    "generated_utc": "2026-11-06T17:52:56.099720+00:00",
+    "generated_utc": "2026-11-07T11:03:42.556812+00:00",
     "mode": "advisory_only",
     "candidates": [
       {
@@ -90,7 +90,7 @@
         "symbol": "BHG.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
-        "news_headlines": 2,
+        "news_headlines": 3,
         "forum_posts": null,
         "assessment": "AVVAKTA"
       }
