@@ -6,8 +6,8 @@
     "shares": 4,
     "entry": 23.28
   },
-  "last_session": "2026-11-06",
-  "trades_today": 1,
+  "last_session": "2026-11-09",
+  "trades_today": 0,
   "history": [
     {
       "session": "2026-11-05",
@@ -34,10 +34,10 @@
       "reason": "Two fresh rising observations, paper-only"
     }
   ],
-  "equity_sek": null,
-  "profit_sek": null,
-  "valuation_quote_utc": null,
-  "valuation_note": "Ingen tillräckligt aktuell kurs. Värdet visas inte.",
+  "equity_sek": 497.05,
+  "profit_sek": -2.95,
+  "valuation_quote_utc": "2026-11-09T08:14:14+00:00",
+  "valuation_note": "Indikativt värde från inofficiell kurs, före courtage och spread. Inte realtid eller möjligt avslutspris.",
   "learning": {
     "closed_trades": 1,
     "wins": 0,
