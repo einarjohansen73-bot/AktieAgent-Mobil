@@ -43,7 +43,7 @@
     "label": "Senaste testkörning rapporterad",
     "detail": "Visar senast sparade pappersresultat, inte livehandel."
   },
-  "generated_utc": "2026-11-09T13:06:16.537335+00:00",
+  "generated_utc": "2026-11-09T13:10:13.832915+00:00",
   "mode": "PAPER_ONLY",
   "performance": {
     "equity_sek": 495.98,
@@ -75,7 +75,7 @@
     "accuracy_percent": 100.0
   },
   "research": {
-    "generated_utc": "2026-11-09T13:06:16.070508+00:00",
+    "generated_utc": "2026-11-09T13:10:13.472707+00:00",
     "mode": "advisory_only",
     "candidates": [
       {
@@ -98,7 +98,7 @@
         "symbol": "SIVE.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
-        "news_headlines": 3,
+        "news_headlines": 2,
         "forum_posts": null,
         "assessment": "AVVAKTA"
       }
