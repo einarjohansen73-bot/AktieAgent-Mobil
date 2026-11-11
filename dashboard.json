@@ -2,7 +2,7 @@
   "state": {
     "cash": 495.98,
     "position": null,
-    "last_session": "2026-11-10",
+    "last_session": "2026-11-11",
     "history": [
       {
         "session": "2026-11-03",
@@ -43,6 +43,14 @@
         "shares": 0,
         "price": null,
         "reason": "No candidate passed independent trend and volume checks"
+      },
+      {
+        "session": "2026-11-11",
+        "action": "WAIT",
+        "symbol": null,
+        "shares": 0,
+        "price": null,
+        "reason": "No candidate passed independent trend and volume checks"
       }
     ]
   },
@@ -51,7 +59,7 @@
     "label": "Senaste testkörning rapporterad",
     "detail": "Visar senast sparade pappersresultat, inte livehandel."
   },
-  "generated_utc": "2026-11-10T17:52:36.967363+00:00",
+  "generated_utc": "2026-11-11T17:58:47.312305+00:00",
   "mode": "PAPER_ONLY",
   "performance": {
     "equity_sek": 495.98,
@@ -70,7 +78,7 @@
     }
   },
   "chart_agent": {
-    "last_session": "2026-11-10",
+    "last_session": "2026-11-11",
     "equity_after_costs_sek": 500.0,
     "profit_after_costs_sek": 0.0,
     "trades": 0,
@@ -78,32 +86,32 @@
     "status": "LAST_RECORDED_SESSION"
   },
   "forecasts": {
-    "total": 7,
-    "evaluated": 2,
-    "accuracy_percent": 50.0
+    "total": 8,
+    "evaluated": 4,
+    "accuracy_percent": 25.0
   },
   "research": {
-    "generated_utc": "2026-11-10T17:52:36.709749+00:00",
+    "generated_utc": "2026-11-11T17:58:46.901932+00:00",
     "mode": "advisory_only",
     "candidates": [
       {
-        "symbol": "BHG.ST",
+        "symbol": "SIVE.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
-        "news_headlines": 1,
-        "forum_posts": 0,
-        "assessment": "AVVAKTA"
-      },
-      {
-        "symbol": "TRUE-B.ST",
-        "trend": "BLANDAD",
-        "volume": "NORMAL_LAG",
-        "news_headlines": 4,
+        "news_headlines": 3,
         "forum_posts": null,
         "assessment": "AVVAKTA"
       },
       {
-        "symbol": "SIVE.ST",
+        "symbol": "BHG.ST",
+        "trend": "POSITIV",
+        "volume": "NORMAL_LAG",
+        "news_headlines": 0,
+        "forum_posts": null,
+        "assessment": "AVVAKTA"
+      },
+      {
+        "symbol": "TRUE-B.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
         "news_headlines": 0,
