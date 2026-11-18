@@ -2,7 +2,7 @@
   "state": {
     "cash": 495.98,
     "position": null,
-    "last_session": "2026-11-16",
+    "last_session": "2026-11-18",
     "history": [
       {
         "session": "2026-11-03",
@@ -75,6 +75,14 @@
         "shares": 0,
         "price": null,
         "reason": "No candidate passed independent trend and volume checks"
+      },
+      {
+        "session": "2026-11-18",
+        "action": "WAIT",
+        "symbol": null,
+        "shares": 0,
+        "price": null,
+        "reason": "No candidate passed independent trend and volume checks"
       }
     ]
   },
@@ -83,7 +91,7 @@
     "label": "Senaste testkörning rapporterad",
     "detail": "Visar senast sparade pappersresultat, inte livehandel."
   },
-  "generated_utc": "2026-11-17T23:50:10.608700+00:00",
+  "generated_utc": "2026-11-18T12:11:19.460482+00:00",
   "mode": "PAPER_ONLY",
   "performance": {
     "equity_sek": 495.98,
@@ -111,16 +119,16 @@
   },
   "forecasts": {
     "total": 11,
-    "evaluated": 8,
-    "accuracy_percent": 25.0
+    "evaluated": 9,
+    "accuracy_percent": 33.3
   },
   "research": {
-    "generated_utc": "2026-11-17T23:50:10.150196+00:00",
+    "generated_utc": "2026-11-18T12:11:19.135910+00:00",
     "mode": "advisory_only",
     "candidates": [
       {
-        "symbol": "TRUE-B.ST",
-        "trend": "POSITIV",
+        "symbol": "SIVE.ST",
+        "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
         "news_headlines": 5,
         "forum_posts": null,
@@ -135,10 +143,10 @@
         "assessment": "AVVAKTA"
       },
       {
-        "symbol": "SIVE.ST",
+        "symbol": "TRUE-B.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
-        "news_headlines": 2,
+        "news_headlines": 5,
         "forum_posts": null,
         "assessment": "AVVAKTA"
       }
