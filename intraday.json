@@ -1,13 +1,9 @@
 {
   "mode": "PAPER_ONLY",
-  "cash_sek": 400.93,
-  "position": {
-    "symbol": "TRUE-B.ST",
-    "shares": 4,
-    "entry": 23.28
-  },
-  "last_session": "2026-11-18",
-  "trades_today": 0,
+  "cash_sek": 504.53,
+  "position": null,
+  "last_session": "2026-11-19",
+  "trades_today": 1,
   "history": [
     {
       "session": "2026-11-05",
@@ -32,17 +28,25 @@
       "shares": 4,
       "price": 23.28,
       "reason": "Two fresh rising observations, paper-only"
+    },
+    {
+      "session": "2026-11-19",
+      "action": "SELL",
+      "symbol": "TRUE-B.ST",
+      "shares": 4,
+      "price": 25.9,
+      "reason": "Paper exit threshold -5% / +10%"
     }
   ],
-  "equity_sek": null,
-  "profit_sek": null,
+  "equity_sek": 504.53,
+  "profit_sek": 4.53,
   "valuation_quote_utc": null,
-  "valuation_note": "Ingen tillräckligt aktuell kurs. Värdet visas inte.",
+  "valuation_note": "Endast kontanter, före kostnader.",
   "learning": {
-    "closed_trades": 1,
-    "wins": 0,
+    "closed_trades": 2,
+    "wins": 1,
     "losses": 1,
-    "win_rate_percent": 0.0,
-    "gross_realized_pnl_sek": -5.95
+    "win_rate_percent": 50.0,
+    "gross_realized_pnl_sek": 4.53
   }
 }
