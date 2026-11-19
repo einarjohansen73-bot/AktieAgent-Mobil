@@ -91,7 +91,7 @@
     "label": "Senaste testkörning rapporterad",
     "detail": "Visar senast sparade pappersresultat, inte livehandel."
   },
-  "generated_utc": "2026-11-18T23:23:16.415678+00:00",
+  "generated_utc": "2026-11-19T23:34:31.915924+00:00",
   "mode": "PAPER_ONLY",
   "performance": {
     "equity_sek": 495.98,
@@ -123,22 +123,14 @@
     "accuracy_percent": 30.0
   },
   "research": {
-    "generated_utc": "2026-11-18T23:23:07.150468+00:00",
+    "generated_utc": "2026-11-19T23:33:56.422807+00:00",
     "mode": "advisory_only",
     "candidates": [
       {
-        "symbol": "BALD-B.ST",
+        "symbol": "NIBE-B.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
-        "news_headlines": 0,
-        "forum_posts": null,
-        "assessment": "AVVAKTA"
-      },
-      {
-        "symbol": "CAST.ST",
-        "trend": "BLANDAD",
-        "volume": "NORMAL_LAG",
-        "news_headlines": 3,
+        "news_headlines": 5,
         "forum_posts": null,
         "assessment": "AVVAKTA"
       },
@@ -151,7 +143,15 @@
         "assessment": "AVVAKTA"
       },
       {
-        "symbol": "SSAB-B.ST",
+        "symbol": "TRUE-B.ST",
+        "trend": "BLANDAD",
+        "volume": "NORMAL_LAG",
+        "news_headlines": 5,
+        "forum_posts": null,
+        "assessment": "AVVAKTA"
+      },
+      {
+        "symbol": "ERIC-B.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
         "news_headlines": 4,
@@ -159,7 +159,7 @@
         "assessment": "AVVAKTA"
       },
       {
-        "symbol": "SBB-B.ST",
+        "symbol": "EMBRAC-B.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
         "news_headlines": 1,
