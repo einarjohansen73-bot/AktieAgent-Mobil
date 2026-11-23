@@ -1,12 +1,8 @@
 {
   "state": {
-    "cash": 417.71,
-    "position": {
-      "symbol": "TRUE-B.ST",
-      "shares": 3,
-      "entry": 26.09
-    },
-    "last_session": "2026-11-19",
+    "cash": 491.33,
+    "position": null,
+    "last_session": "2026-11-23",
     "history": [
       {
         "session": "2026-11-03",
@@ -95,6 +91,14 @@
         "shares": 3,
         "price": 26.09,
         "reason": "Price +3% with positive 5/10-day trend and volume >=1.5x"
+      },
+      {
+        "session": "2026-11-23",
+        "action": "SELL",
+        "symbol": "TRUE-B.ST",
+        "shares": 3,
+        "price": 24.54,
+        "reason": "Daily close crossed -5% or +10% threshold"
       }
     ]
   },
@@ -103,30 +107,30 @@
     "label": "Senaste testkörning rapporterad",
     "detail": "Visar senast sparade pappersresultat, inte livehandel."
   },
-  "generated_utc": "2026-11-20T23:05:00.294009+00:00",
+  "generated_utc": "2026-11-23T17:48:01.007938+00:00",
   "mode": "PAPER_ONLY",
   "performance": {
-    "equity_sek": 495.98,
-    "profit_sek": -4.02,
+    "equity_sek": 491.33,
+    "profit_sek": -8.67,
     "trade_stats": {
-      "closed_trades": 1,
+      "closed_trades": 2,
       "winning_trades": 0,
       "win_rate_percent": 0.0,
-      "realized_profit_before_costs_sek": -4.02
+      "realized_profit_before_costs_sek": -8.67
     },
     "cost_scenario": {
-      "estimated_equity_after_costs_sek": 491.67,
-      "estimated_profit_after_costs_sek": -8.33,
-      "estimated_costs_sek": 4.31,
+      "estimated_equity_after_costs_sek": 487.03,
+      "estimated_profit_after_costs_sek": -12.97,
+      "estimated_costs_sek": 4.3,
       "assumptions": "Illustrative: commission max(1 SEK, 0.25% of order) + 0.10% half-spread each side; includes hypothetical exit of open holding. No market impact or taxes."
     }
   },
   "chart_agent": {
-    "last_session": "2026-11-19",
-    "equity_after_costs_sek": 498.92,
-    "profit_after_costs_sek": -1.08,
-    "trades": 1,
-    "max_drawdown_percent": 0.22,
+    "last_session": "2026-11-23",
+    "equity_after_costs_sek": 493.2,
+    "profit_after_costs_sek": -6.8,
+    "trades": 2,
+    "max_drawdown_percent": 1.36,
     "status": "LAST_RECORDED_SESSION"
   },
   "forecasts": {
@@ -135,17 +139,9 @@
     "accuracy_percent": 26.7
   },
   "research": {
-    "generated_utc": "2026-11-20T23:04:24.737499+00:00",
+    "generated_utc": "2026-11-23T17:48:00.208135+00:00",
     "mode": "advisory_only",
     "candidates": [
-      {
-        "symbol": "TRUE-B.ST",
-        "trend": "POSITIV",
-        "volume": "HOG",
-        "news_headlines": 5,
-        "forum_posts": null,
-        "assessment": "TEKNISKT_INTRESSANT"
-      },
       {
         "symbol": "SIVE.ST",
         "trend": "BLANDAD",
@@ -155,7 +151,23 @@
         "assessment": "AVVAKTA"
       },
       {
-        "symbol": "EMBRAC-B.ST",
+        "symbol": "SINCH.ST",
+        "trend": "BLANDAD",
+        "volume": "HOG",
+        "news_headlines": 3,
+        "forum_posts": null,
+        "assessment": "AVVAKTA"
+      },
+      {
+        "symbol": "SBB-B.ST",
+        "trend": "BLANDAD",
+        "volume": "NORMAL_LAG",
+        "news_headlines": 0,
+        "forum_posts": null,
+        "assessment": "AVVAKTA"
+      },
+      {
+        "symbol": "ERIC-B.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
         "news_headlines": 2,
@@ -163,15 +175,7 @@
         "assessment": "AVVAKTA"
       },
       {
-        "symbol": "SSAB-B.ST",
-        "trend": "BLANDAD",
-        "volume": "NORMAL_LAG",
-        "news_headlines": 5,
-        "forum_posts": null,
-        "assessment": "AVVAKTA"
-      },
-      {
-        "symbol": "ERIC-B.ST",
+        "symbol": "NIBE-B.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
         "news_headlines": 5,
