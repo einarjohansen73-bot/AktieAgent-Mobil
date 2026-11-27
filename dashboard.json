@@ -1,8 +1,12 @@
 {
   "state": {
-    "cash": 491.33,
-    "position": null,
-    "last_session": "2026-11-24",
+    "cash": 395.14,
+    "position": {
+      "symbol": "SBB-B.ST",
+      "shares": 41,
+      "entry": 2.346
+    },
+    "last_session": "2026-11-25",
     "history": [
       {
         "session": "2026-11-03",
@@ -107,6 +111,14 @@
         "shares": 0,
         "price": null,
         "reason": "No candidate passed independent trend and volume checks"
+      },
+      {
+        "session": "2026-11-25",
+        "action": "BUY",
+        "symbol": "SBB-B.ST",
+        "shares": 41,
+        "price": 2.346,
+        "reason": "Price +3% with positive 5/10-day trend and volume >=1.5x"
       }
     ]
   },
@@ -115,7 +127,7 @@
     "label": "Senaste testkörning rapporterad",
     "detail": "Visar senast sparade pappersresultat, inte livehandel."
   },
-  "generated_utc": "2026-11-26T00:59:23.897730+00:00",
+  "generated_utc": "2026-11-27T01:00:48.959442+00:00",
   "mode": "PAPER_ONLY",
   "performance": {
     "equity_sek": 491.33,
@@ -127,31 +139,39 @@
       "realized_profit_before_costs_sek": -8.67
     },
     "cost_scenario": {
-      "estimated_equity_after_costs_sek": 487.03,
-      "estimated_profit_after_costs_sek": -12.97,
-      "estimated_costs_sek": 4.3,
+      "estimated_equity_after_costs_sek": 484.83,
+      "estimated_profit_after_costs_sek": -15.17,
+      "estimated_costs_sek": 6.5,
       "assumptions": "Illustrative: commission max(1 SEK, 0.25% of order) + 0.10% half-spread each side; includes hypothetical exit of open holding. No market impact or taxes."
     }
   },
   "chart_agent": {
-    "last_session": "2026-11-24",
-    "equity_after_costs_sek": 493.2,
-    "profit_after_costs_sek": -6.8,
-    "trades": 2,
-    "max_drawdown_percent": 1.36,
+    "last_session": "2026-11-25",
+    "equity_after_costs_sek": 492.1,
+    "profit_after_costs_sek": -7.9,
+    "trades": 3,
+    "max_drawdown_percent": 1.58,
     "status": "LAST_RECORDED_SESSION"
   },
   "forecasts": {
-    "total": 31,
+    "total": 35,
     "evaluated": 24,
     "accuracy_percent": 20.8
   },
   "research": {
-    "generated_utc": "2026-11-26T00:59:13.241755+00:00",
+    "generated_utc": "2026-11-27T01:00:13.423297+00:00",
     "mode": "advisory_only",
     "candidates": [
       {
         "symbol": "SBB-B.ST",
+        "trend": "POSITIV",
+        "volume": "HOG",
+        "news_headlines": 0,
+        "forum_posts": null,
+        "assessment": "TEKNISKT_INTRESSANT"
+      },
+      {
+        "symbol": "BALD-B.ST",
         "trend": "POSITIV",
         "volume": "NORMAL_LAG",
         "news_headlines": 0,
@@ -159,34 +179,26 @@
         "assessment": "AVVAKTA"
       },
       {
-        "symbol": "TRUE-B.ST",
-        "trend": "POSITIV",
+        "symbol": "HEXA-B.ST",
+        "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
-        "news_headlines": 5,
+        "news_headlines": 0,
         "forum_posts": null,
         "assessment": "AVVAKTA"
       },
       {
-        "symbol": "BALD-B.ST",
-        "trend": "BLANDAD",
+        "symbol": "CAST.ST",
+        "trend": "POSITIV",
         "volume": "NORMAL_LAG",
         "news_headlines": 1,
         "forum_posts": null,
         "assessment": "AVVAKTA"
       },
       {
-        "symbol": "CAST.ST",
+        "symbol": "SSAB-B.ST",
         "trend": "BLANDAD",
         "volume": "NORMAL_LAG",
-        "news_headlines": 2,
-        "forum_posts": null,
-        "assessment": "AVVAKTA"
-      },
-      {
-        "symbol": "EMBRAC-B.ST",
-        "trend": "BLANDAD",
-        "volume": "NORMAL_LAG",
-        "news_headlines": 0,
+        "news_headlines": 4,
         "forum_posts": null,
         "assessment": "AVVAKTA"
       }
